@@ -6,11 +6,11 @@ public class GreeterService(ILogger<GreeterService> logger) : Greeter.GreeterBas
 {
     public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
     {
-        logger.LogInformation("The message is received from {Name}", request.Name);
+        logger.LogInformation("The message is received from {Name}", request.Who);
 
         return Task.FromResult(new HelloReply
         {
-            Message = "Hello " + request.Name
+            Result = "Hello " + request.Who
         });
     }
 }
